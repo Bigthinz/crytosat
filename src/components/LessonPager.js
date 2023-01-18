@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import './LessonPager.css';
 
 
@@ -14,10 +14,10 @@ class LessonPager extends React.Component {
     if (this.props.previous) {
       previous = (
         <Link to={this.props.previous}>
-          <span className='arrow'>
+          {/* <span className='arrow'>
             <FontAwesomeIcon icon={faArrowLeft}/>
-          </span>
-          <span className='caption'>Previous</span>
+          </span> */}
+          <span className='caption'>1/12</span>
         </Link>
       );
     }
@@ -27,8 +27,7 @@ class LessonPager extends React.Component {
         <Link to={this.props.next}>
           <span className='caption'>Next</span>
           <span className='arrow'>
-            <FontAwesomeIcon icon={faArrowRight}/>
-          </span>
+          <FontAwesomeIcon icon={faAngleRight} />          </span>
         </Link>
       );
     }
