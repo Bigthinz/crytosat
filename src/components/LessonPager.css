@@ -1,12 +1,12 @@
 .pager {
   box-sizing: border-box;
-  display: block;
-  position: absolute;
-  right:0;
-  bottom: 0px;
-  height:  40px;
-  overflow: hidden;
-  z-index: 1;
+  display: flex;
+  align-items: center;
+    height: 70px;
+    overflow: hidden;
+    z-index: 99;
+    position: relative;
+    bottom: 20px;
 }
 
 
@@ -18,22 +18,32 @@
   border-width: 1px;
   border-color: #31353E;
   width:  50%;
-  height: 100%;
+  /* height: 100%; */
   position: relative;
   text-decoration: none;
   font-size:  1rem;
   color: #8C95A7;
   overflow: hidden;
+  align-items: center;
 }
 
 .next{
   text-align:  right !important;
 }
 
+.pager .link-container {
+  display: inline-flex !important;
+}
+
+
+.pager .link-container.next .count{
+  margin-right: 1rem;
+} 
+
 .pager .link-container a {
   box-sizing: border-box;
   display: inline-block;
-  height: 100%;
+  /* height: 100%; */
   text-decoration: none;
   color: inherit;
   padding-top: 7px;
@@ -44,9 +54,15 @@
 
 .pager .link-container.next a {
   color: white;
-  margin-right: 50px;
+  /* margin-right: 50px; */
   width:100%;
 } 
+
+.pager .link-container.next a{
+  display: flex;
+  justify-content: space-around;
+}
+
 
 .pager .link-container.previous a {
   text-align:  left;

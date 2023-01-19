@@ -6,10 +6,34 @@
   flex-direction: column;
   color: #777E8B;
   box-sizing: border-box;
-  transition: transform .4s
+  transition:  transform .4s
   cubic-bezier(0, .52, 0, 1);
 
   position:relative;
+  
+
+}
+
+
+.wrap{
+  z-index:    1;
+  position: relative;;
+}
+
+.active-panel{
+  margin-left: -118px;
+  left: 0px !important;
+}
+
+/* .active{
+  background: #02000E!important;
+  opacity:.5;
+} */
+
+.lesson-wrapper{
+  min-height: 100vh;
+  position: relative;
+  z-index: 100;
 }
 
 .lesson-close{
@@ -25,9 +49,15 @@
 
 .lesson .lesson-nav .arrow{
   color: white;
+  cursor:pointer;
+  background-color: red;
 }
 
-
+.static{
+  position: absolute;
+  bottom: 0;
+  width:100%;
+}
 
 .logo-wrap{
   display: flex;
@@ -43,7 +73,7 @@
 .foreground{
   background: linear-gradient(166.28deg, #030014 22.56%, #320541 42.04%, #6D0D8D 49.01%, #320541 54.99%, #030014 78.23%);
   position:absolute;
-  bottom: -10%;
+  bottom: 0;
   height: 50vh;
   width: 100%;
   overflow: hidden;;
@@ -78,8 +108,8 @@
   height: 10px;
   background: #F4F4F499;
   z-index:999;
-  position: absolute;
-  bottom: -4rem;
+  position: relative;
+  /* bottom: -4rem; */
   
 
 }
