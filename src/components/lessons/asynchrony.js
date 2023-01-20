@@ -1,7 +1,7 @@
 import CodeSnippet from '../CodeSnippet';
 
 const content = (
-  <div>
+  <div className=''>
     <h2>Asynchrony</h2>
     <p>
      When the satellite is offline the cryptosat service caches transmission for
