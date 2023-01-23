@@ -40,7 +40,8 @@ import MainService from '@cryptosat/cryptosim/lib/services/main';
 import MainClient from '@cryptosat/cryptosim/lib/clients/main';
 import binary from '@cryptosat/cryptosim/lib/binary';
 import util from 'tweetnacl-util';
-
+import CodeModal from './components/CodeModal';
+import Modal from './components/Modal';
 
 const componentMap = new Map([
   ['overview', overview],
@@ -204,7 +205,9 @@ class App extends React.Component {
                 <Redirect to='/getting-started/overview' />
               </Route>
             </Switch>
+
           </PanelContainer>
+
         </div>
       </div>
       </>

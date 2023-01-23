@@ -54,7 +54,7 @@ class CodeSnippet extends React.Component {
 
   close(){
     this.setState({
-      isClosed:true
+      isOpen:false
     })
   }
 
@@ -67,7 +67,7 @@ class CodeSnippet extends React.Component {
 
     return(
       <div className='code-snippet'>
-        <Modal copy={this.copy} isOpened={this.state.isOpen} hide={this.isClosed}/>
+        <Modal copy={this.copy} isOpened={this.state.isOpen} hide={this.close}/>
 
         <pre >
           <code ref={this.textRef}>
