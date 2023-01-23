@@ -7,13 +7,13 @@
     /* border-left: 3px solid #7A63F2; */
     line-height: 1.6;
     margin-bottom: 1.6em;
-    margin-right: 10px;
+    margin-right: 75px;
     max-width: 100%;
     padding-top: 10px;
     padding-right: 12px;
     padding-bottom: 10px;
     padding-left: 12px;
-    color:#fefefe;
+    color:#F4F4F4;
     /* color: rgb(152, 152, 152); */
     /*color: #666;*/
     page-break-inside: avoid;
@@ -34,7 +34,7 @@
   }
   
   .code-snippet button {
-    color: #777E8B;
+    color: #f4f4f4;
     background: none;
     border-style: none;
     padding: 10px;

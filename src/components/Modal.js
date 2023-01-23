@@ -28,8 +28,8 @@ class Modal extends React.Component {
         
         <div className='modal-container'>
         <div className='wrapper'>
-            <div className=''> 
-                <CopySnippet code={`cryptosat.getPublicEncryptionKey();`} />
+            <div className='code-wrap'> 
+                <CopySnippet code={this.props.code} />
 
             </div>
             <div className='close-btn'>

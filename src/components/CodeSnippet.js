@@ -67,7 +67,7 @@ class CodeSnippet extends React.Component {
 
     return(
       <div className='code-snippet'>
-        <Modal copy={this.copy} isOpened={this.state.isOpen} hide={this.close}/>
+        <Modal copy={this.copy} isOpened={this.state.isOpen} hide={this.close} code={this.props.code} />
 
         <pre >
           <code ref={this.textRef}>
@@ -80,10 +80,6 @@ class CodeSnippet extends React.Component {
               </button>
             </div>
             { this.state.codeHeight && <div className='expand' onClick={this.expand}>x</div> }
-           
-           {console.log(this.state.codeHeight)}
-
-            {/* <FontAwesomeIcon icon="fa-sharp fa-solid fa-up-right-and-down-left-from-center" /> */}
 
         </pre>
       </div>
