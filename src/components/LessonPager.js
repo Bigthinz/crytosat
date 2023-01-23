@@ -9,18 +9,39 @@ class LessonPager extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      open:true
-    }
+    this.state ={
+      count: 1
+     }
+     this.handleIncrement = this.handleIncrement.bind(this);
+     this.handleDecrement = this.handleDecrement.bind(this);
+  
+  }
+
+
+
+  handleIncrement(e){
+    // e.preventDefault();
+    this.setState(prevState =>(
+      {
+        count: prevState.count + 1
+      }))
+      console.log(this.state.count + 1)
+  }
+
+  handleDecrement(){
+    this.setState(prevState=>({count: prevState.count - 1}))
+    console.log(this.state.count - 1)
+
   }
 
   render() {
+    // let {count} = this.state
     let previous = null;
     let next = null;
     
     if (this.props.previous) {
       previous = (
-        <Link to={this.props.previous}>
+        <Link onClick={this.handleDecrement} to={this.props.previous}>
           {/* <span className='arrow'>
             <FontAwesomeIcon icon={faArrowLeft}/>
           </span> */}
@@ -31,11 +52,13 @@ class LessonPager extends React.Component {
 
     if (this.props.next) {
       next = (
-        <Link className='next-content' to={this.props.next}>
+
+        <Link href='#' onClick={this.handleIncrement} className='next-content' to={this.props.next}>
           <span className='caption'>Next</span>
           <span className='arrow'>
           <FontAwesomeIcon icon={faAngleRight} />          </span>
         </Link>
+
       );
     }
 
@@ -43,7 +66,7 @@ class LessonPager extends React.Component {
       <div className="pager">
         <div className={'link-container previous'}>{previous}</div>
         <div className='link-container next'>
-          <span className='count'>1/12</span>
+          <span className='count'>{this.state.count}/12</span>
           {next}
           </div>
       </div>

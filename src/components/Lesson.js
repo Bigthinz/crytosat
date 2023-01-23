@@ -3,29 +3,16 @@ import React, {useContext} from 'react';
 import './Lesson.css';
 import LessonPager from './LessonPager';
 import { faAngleLeft, faBars, faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
+import ProgressBar from './ProgressBar';
 
 
 
 class Lesson extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      open:true
-    }
-    this.isOpen = this.isOpen.bind(this);
- 
-  }
-
-  isOpen(){
-    this.setState({open: !this.state.open});
-
-    console.log(this.state.open)
-  }
-
+  
   render() {
     return(
-      <div className={`lesson ${this.state.open && "active" }` }>
+      <div className="lesson ">
 
         <div className='lesson-nav'>
           <span className='arrow'>
@@ -49,9 +36,7 @@ class Lesson extends React.Component {
 
         <div className='static'>
           <LessonPager previous={this.props.previous} next={this.props.next} />
-          <div className='progress-bar'>
-            <div></div>
-          </div>
+          <ProgressBar/>
         </div>
        
 

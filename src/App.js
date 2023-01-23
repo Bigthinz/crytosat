@@ -77,6 +77,9 @@ class App extends React.Component {
   constructor() {
     super();
     this.setupUniverse();
+    this.state ={
+      isModalOpened: false
+   }
   }
 
   setupUniverse() {
@@ -144,7 +147,7 @@ class App extends React.Component {
         flatLessons.push(lesson);
       }
     }
-
+    console.log(flatLessons)
     const routes = [];
     for (let i = 0; i < flatLessons.length; i++) {
       const lesson = flatLessons[i];
@@ -178,10 +181,15 @@ class App extends React.Component {
     const center = new GeoCoordinates(40.567952, -98.518132, 0);
     const routes = this.createRoutes();
     return (
+      <>
       <div className='main'>
+        {/* <div id="modal-root"></div> */}
+        {/* <CodeModal/> */}
         <div className='nav-container'>
           <NavBar />
         </div>
+      
+
         <div className='content'>
           <PanelContainer>
             <Console theme='dark' payload={this.payload}/>
@@ -199,6 +207,7 @@ class App extends React.Component {
           </PanelContainer>
         </div>
       </div>
+      </>
     );
   }
 
