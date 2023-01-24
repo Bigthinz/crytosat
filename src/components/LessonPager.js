@@ -56,17 +56,18 @@ class LessonPager extends React.Component {
     if (this.props.next) {
       next = (
 
-        <Link href='#' onClick={this.handleIncrement} className='next-content' to={this.props.next}>
+        <Link href='#' onClick={this.handleIncrement} className='next-link next-content ' to={this.props.next}>
           <span className='caption'>Next</span>
           <span className='arrow'>
-          <FontAwesomeIcon icon={faAngleRight} />          </span>
+          <FontAwesomeIcon icon={faAngleRight} />          
+          </span>
         </Link>
 
       );
     }
 
 
-    const index = this.props.lesson.findIndex(item => item.name === this.props.title);
+    const index = this.props.lesson.findIndex(item => item.name === this.props.title) + 1;
 
     return (
       <div className="pager">

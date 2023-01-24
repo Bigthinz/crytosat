@@ -150,9 +150,9 @@ class App extends React.Component {
     }
     const routes = [];
     for (let i = 0; i < flatLessons.length; i++) {
-      const lesson = flatLessons[i];
+      const lesson = flatLessons[i];  
+      let title = lesson.name;
       let next = null;
-      let title = null
       let previous = null;
       if  (i > 0) {
         const previousLesson = flatLessons[i - 1];
@@ -161,8 +161,10 @@ class App extends React.Component {
       if (i < flatLessons.length - 1) {
         const nextLesson = flatLessons[i + 1];
         next = nextLesson.disabled ? null : nextLesson.path;
-        title = lesson.name;
+       
       }
+      console.log(title)
+
       const content = componentMap.get(lesson.content);
       const route = (
         <Route key={lesson.path} exact path={lesson.path}>

@@ -31,8 +31,16 @@
   text-align:  right !important;
 }
 
+.link-next{
+  width:0px !important;
+}
+
 .pager .link-container {
   display: inline-flex !important;
+
+  /* {flex affects the flow on reaching the end} */
+  /* display: flex !important;
+  justify-content: space-around; */
 }
 
 
@@ -55,12 +63,17 @@
 .pager .link-container.next a {
   color: white;
   /* margin-right: 50px; */
-  width:100%;
+  /* width:100%; */
+ 
 } 
 
 .pager .link-container.next a{
   display: flex;
   justify-content: space-around;
+
+  /* {} */
+  position: absolute;
+  right: 0;
 }
 
 

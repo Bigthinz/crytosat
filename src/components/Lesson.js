@@ -8,35 +8,13 @@ import ProgressBar from './ProgressBar';
 
 
 class Lesson extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state ={
-      index: null,
-      length: null
-     }
-  
-  }
-
-  
-  
+ 
   render() {
-    // console.log(this.props.lesson)
-    // console.log(this.props.content)
-    console.log(this.props.title)
 
-    // let length = this.props.lesson.length
-    // let index = this.props.lesson.findIndex(item => item.name === this.props.title);
-    // const value = (index/length)*100
-
-    // console.log({ title: this.props.title })
     const length = this.props.lesson.length 
     const index = this.props.lesson.findIndex(item => item.name === this.props.title);
-    // const value = ((index - 1) /length  )*100
-    console.log({ index })
-    const pixel = Math.round(((index + 1) / length) * 100) + "%"
-
-
-    console.log(pixel)
+    const progressIndex = index
+    const pixel = Math.round(((progressIndex + 1) / length) * 100) + "%"
 
 
     return(
@@ -62,12 +40,11 @@ class Lesson extends React.Component {
           {this.props.content}
         </div>
 
+   
         <div className='static'>
           <LessonPager previous={this.props.previous} next={this.props.next} lesson={this.props.lesson} title={this.props.title} />
           <ProgressBar value={pixel}/>
         </div>
-       
-
         <div className='foreground' >
           <img src='/dots.png' alt='logo'/>  
         </div>        
