@@ -28,8 +28,29 @@ class PanelContainer extends React.Component {
       selectedDividerIndex: null,
       selectedDividerX: null,
       initializedWidths: false,
+      count: 1
     }
+    this.handleIncrement = this.handleIncrement.bind(this);
+    this.handleDecrement = this.handleDecrement.bind(this);
+ 
     window.addEventListener('resize', this.onResize);
+  }
+
+
+
+  handleIncrement(e){
+    // e.preventDefault();
+    this.setState(prevState =>(
+      {
+        count: prevState.count + 1
+      }))
+      console.log(this.state.count + 1)
+  }
+
+  handleDecrement(){
+    this.setState(prevState=>({count: prevState.count - 1}))
+    console.log(this.state.count - 1)
+
   }
 
   pauseEvent(e) {
@@ -164,7 +185,6 @@ class PanelContainer extends React.Component {
       </div>
     );
   }
-
 }
 
 export default PanelContainer;

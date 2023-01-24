@@ -1,42 +1,74 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import './LessonPager.css';
 
 
 class LessonPager extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state ={
+      count: 1
+     }
+     this.handleIncrement = this.handleIncrement.bind(this);
+     this.handleDecrement = this.handleDecrement.bind(this);
+  
+  }
+
+
+
+  handleIncrement(e){
+    // e.preventDefault();
+    this.setState(prevState =>(
+      {
+        count: prevState.count + 1
+      }))
+      console.log(this.state.count + 1)
+  }
+
+  handleDecrement(){
+    this.setState(prevState=>({count: prevState.count - 1}))
+    console.log(this.state.count - 1)
+
+  }
+
   render() {
+    // let {count} = this.state
     let previous = null;
     let next = null;
     
     if (this.props.previous) {
       previous = (
-        <Link to={this.props.previous}>
-          <span className='arrow'>
+        <Link onClick={this.handleDecrement} to={this.props.previous}>
+          {/* <span className='arrow'>
             <FontAwesomeIcon icon={faArrowLeft}/>
-          </span>
-          <span className='caption'>Previous</span>
+          </span> */}
+          <span className='caption'>previous</span>
         </Link>
       );
     }
 
     if (this.props.next) {
       next = (
-        <Link to={this.props.next}>
+
+        <Link href='#' onClick={this.handleIncrement} className='next-content' to={this.props.next}>
           <span className='caption'>Next</span>
           <span className='arrow'>
-            <FontAwesomeIcon icon={faArrowRight}/>
-          </span>
+          <FontAwesomeIcon icon={faAngleRight} />          </span>
         </Link>
+
       );
     }
 
     return (
       <div className="pager">
         <div className={'link-container previous'}>{previous}</div>
-        <div className='link-container next'>{next}</div>
+        <div className='link-container next'>
+          <span className='count'>{this.state.count}/12</span>
+          {next}
+          </div>
       </div>
     );
   }

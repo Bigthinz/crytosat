@@ -1,6 +1,9 @@
 .code-snippet pre {
   display: inline-block;
   width: 100%;
+  max-height: 62px;
+  overflow-x: scroll;
+  overflow-y: hidden;
   box-sizing: border-box;
   background: #292D36;
   border: 1px solid #31353E;
@@ -13,10 +16,37 @@
   padding-right: 12px;
   padding-bottom: 10px;
   padding-left: 12px;
-  color: rgb(152, 152, 152);
+  color:#fefefe;
+  /* color: rgb(152, 152, 152); */
   /*color: #666;*/
   page-break-inside: avoid;
   font-family: "Menlo", consolas, monospace;
+  position: relative;;
+
+}
+
+.expand{
+  position: absolute;
+  top:0;
+  right:30px;
+  width: 30px;
+  height: 100%;
+  background: #353343 ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* position: relative; */
+}
+
+.expand::before{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width:50px;
+  height: 100%;
+  background: linear-gradient(270deg, #353343 33.33%, rgba(53, 51, 67, 0) 109.72%);
 }
 
 .code-snippet code {

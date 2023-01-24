@@ -2,7 +2,7 @@ body {
   overscroll-behavior: none;
   overflow-x: hidden;
   font-family: poppins;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .main {
@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-flow: column;
   overflow: hidden;
+  position: relative;
 }
 
 .main .nav-container {
