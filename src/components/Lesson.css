@@ -8,16 +8,18 @@
   box-sizing: border-box;
   transition:  transform .4s
   cubic-bezier(0, .52, 0, 1);
-
   position:relative;
   
+  display: flex;
+  justify-content: space-between;
 
+  z-index: 1;
 }
 
 
 .wrap{
   z-index:    1;
-  position: relative;;
+  position: relative;
 }
 
 .active-panel{
@@ -79,6 +81,7 @@
   height: 50vh;
   width: 100%;
   overflow: hidden;
+  z-index: 0;
   
 }
 
@@ -91,6 +94,7 @@
   margin-bottom: 40px;
   height:69vh;
   box-sizing: border-box;
+  position:relative;
   z-index: 1;
 }
 

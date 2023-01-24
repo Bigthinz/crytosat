@@ -19,35 +19,38 @@ class Lesson extends React.Component {
 
     return(
       <div className="lesson ">
+        <div>
+          <div className='lesson-nav'>
+            <span className='arrow'>
+            <FontAwesomeIcon icon={faBars} />
 
-        <div className='lesson-nav'>
-          <span className='arrow'>
-          <FontAwesomeIcon icon={faBars} />
-
-          </span>
-          <div className='logo-wrap'>
-            <div>
-              <img src='/logo.png' alt='logo'/>
+            </span>
+            <div className='logo-wrap'>
+              <div>
+                <img src='/logo.png' alt='logo'/>
+              </div>
+              <h3>CryptoSat Simulator</h3>
             </div>
-            <h3>CryptoSat Simulator</h3>
+            <span className='arrow' onClick={this.isOpen} >
+              <FontAwesomeIcon  icon={faAngleLeft} />
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </span>
           </div>
-          <span className='arrow' onClick={this.isOpen} >
-            <FontAwesomeIcon  icon={faAngleLeft} />
-            <FontAwesomeIcon icon={faAngleLeft} />
-          </span>
+          <div className='lesson-content'>
+            {this.props.content}
+          </div>
         </div>
-        <div className='lesson-content'>
-          {this.props.content}
-        </div>
-
    
-        <div className='static'>
-          <LessonPager previous={this.props.previous} next={this.props.next} lesson={this.props.lesson} title={this.props.title} />
-          <ProgressBar value={pixel}/>
-        </div>
+        <div>
+          <div className='static'>
+            <LessonPager previous={this.props.previous} next={this.props.next} lesson={this.props.lesson} title={this.props.title} />
+            <ProgressBar value={pixel}/>
+          </div>
+           
+        </div> 
         <div className='foreground' >
-          <img src='/dots.png' alt='logo'/>  
-        </div>        
+            <img src='/dots.png' alt='logo'/>  
+          </div>      
       </div>
     )
   }
