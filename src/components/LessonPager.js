@@ -38,6 +38,9 @@ class LessonPager extends React.Component {
     // let {count} = this.state
     let previous = null;
     let next = null;
+    let lessonLength = this.props.lesson.length
+
+
     
     if (this.props.previous) {
       previous = (
@@ -62,11 +65,14 @@ class LessonPager extends React.Component {
       );
     }
 
+
+    const index = this.props.lesson.findIndex(item => item.name === this.props.title);
+
     return (
       <div className="pager">
         <div className={'link-container previous'}>{previous}</div>
         <div className='link-container next'>
-          <span className='count'>{this.state.count}/12</span>
+          <span className='count'>{index}/{lessonLength}</span>
           {next}
           </div>
       </div>

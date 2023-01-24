@@ -3,7 +3,6 @@ import './CodeSnippet.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy} from '@fortawesome/pro-light-svg-icons'
 import Modal from './Modal';
-// import { faSharp, faSolid, faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
 
 function copyToClipboard(text) {
   var dummy = document.createElement("textarea");
@@ -37,7 +36,6 @@ class CodeSnippet extends React.Component {
     let isTextMultiline = this.textRef.current.innerHTML.split('\n')
 
     if(isTextMultiline.length > 1){
-      console.log('Is greater')
       this.setState({
         codeHeight: true
       })
@@ -72,7 +70,6 @@ class CodeSnippet extends React.Component {
         <pre >
           <code ref={this.textRef}>
             {this.props.code}
-            {console.log(this.props.code)}
           </code>
             <div className='icon-container'>
               <button onClick={this.copy.bind(this)}>
